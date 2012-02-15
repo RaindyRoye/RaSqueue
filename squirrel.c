@@ -278,7 +278,7 @@ void smqLog(int level, const char *fmt, ...) {
     ts = time(NULL);
     tm = gmtime(&ts);
     
-    sprintf(log_path, "squirrel.%d%d.log", tm->tm_year + 1900, tm->tm_mon + 1);
+    sprintf(log_path, "RaSqueue.%d%d.log", tm->tm_year + 1900, tm->tm_mon + 1);
     
     fp = fopen(log_path, "a+");
     if (!fp) return;

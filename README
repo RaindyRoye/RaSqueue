@@ -4,3 +4,6 @@
 
 --Install
 	just Run install.sh to install
+
+--Run RaSqueue
+	run as: ./RaSqueue -c ./RaSqueue.conf
