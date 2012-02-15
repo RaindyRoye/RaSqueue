@@ -7,3 +7,8 @@
 
 --Run RaSqueue
 	run as: ./RaSqueue -c ./RaSqueue.conf
+
+
+--Todo List
+	(1)Turn performance
+	(2)Add other api such as: JAVA/Perl/Lua , and so on
