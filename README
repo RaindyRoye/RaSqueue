@@ -1,0 +1,3 @@
+--RaSqueue , base on squirrelMQ
+	(1)Update ae driver & LUA driver
+	(2)Fix the PHP api
