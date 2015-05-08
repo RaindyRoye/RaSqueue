@@ -11,7 +11,7 @@ LIB_O=  lauxlib.o lbaselib.o lbitlib.o lcorolib.o ldblib.o liolib.o \
 OBJ = ae.o slabs.o dlist.o squirrel.o zmalloc.o 
 
 all:$(OBJ)
-	gcc -o RaSqueue $(OBJ) $(CORE_O) $(LIB_O) -llua -lpthread -lm -ldl
+	gcc -o RaSqueue $(OBJ) $(CORE_O) $(LIB_O) -lpthread -lm -ldl
 	@echo ""
 	@echo "+--------------------------------------------+"
 	@echo "|            Finish compilation              |"
