@@ -1,7 +1,7 @@
 <?php
 include('squirrel.class.php');
 
-$squirrel = new Squirrel('192.168.1.44',6061);
+$squirrel = new Squirrel('127.0.0.1',6061);
 
 $start = time();
 
