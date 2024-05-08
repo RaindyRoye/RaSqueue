@@ -77,6 +77,7 @@
 #define DEFAULT_PORT 6061
 #define CLIENT_CACHES_SIZE 1000
 #define RDB_HEADER_BLOCK "SQUIRREL0013"
+#define QUE_RDB_FILENAME "squirrel.db"
 
 #define RECV_BUFF_SIZE 2048
 #define SEND_BUFF_SIZE 2048
@@ -1069,9 +1070,9 @@ int diskStoreAction() {
     fsync(fileno(fp));
     fclose(fp);
     
-    if (access("squirrel.db", R_OK) == 0)
-        unlink("squirrel.db");/* delete squirrel.rdb */
-    if (rename(tmpfile, "squirrel.db") == -1) {
+    if (access(QUE_RDB_FILENAME, R_OK) == 0)
+        unlink(QUE_RDB_FILENAME);/* delete squirrel.rdb */
+    if (rename(tmpfile, QUE_RDB_FILENAME) == -1) {
         smqLog(LOG_ERROR, "Error moving temp DB file on the final destination, %s", strerror(errno));
         unlink(tmpfile);
         return -1;
@@ -1116,9 +1117,9 @@ int tryLoadData() {
     smq_block_t *item;
     int nodes = 0;
     
-    if (access("squirrel.db", R_OK) != 0)
+    if (access(QUE_RDB_FILENAME, R_OK) != 0)
         return 0;
-    fp = fopen("squirrel.db", "rb");
+    fp = fopen(QUE_RDB_FILENAME, "rb");
     if (!fp) {
         smqLog(LOG_ERROR, "Unable open date file to load");
         return -1;
