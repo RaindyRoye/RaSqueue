@@ -1,3 +1,5 @@
+#Note# 
+RaSqueue is not under development now, introduce to use beanstalkd(https://github.com/beanstalkd/beanstalkd) for instead.
 --RaSqueue , base on squirrelMQ
 	(1)Update ae driver & LUA driver
 	(2)Fix the PHP api
